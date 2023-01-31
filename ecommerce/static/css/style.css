@@ -1,0 +1,25 @@
+.my_column{
+    width: 18rem;
+    padding: 10px;
+    margin: 25px auto;
+    max-height: 25rem;
+    min-height: 25rem;
+    
+}
+
+.image{
+    height: 18rem;
+}
+
+.my_footer{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.prod_img{
+    height: 25rem;
+}
+
+.font_color{
+    color: azure;
+}

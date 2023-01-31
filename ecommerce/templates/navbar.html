@@ -1,0 +1,55 @@
+{% load static %}
+
+<!-- <nav class="nav navbar-dark bg-dark">
+    <div class="container-fluid" style="padding: 10px;">
+        <div style="display: inline-block;">
+            <a class="navbar-brand" href="{% url 'shop:allprodcat' %}">All Products</a>
+            {% for cat in links %}
+            <a class="navbar-brand" href="{{ cat.get_url }}">{{ cat.name }}</a>
+            {% endfor %}
+        </div>
+        {% if count > 0 %}
+        <div style="display: inline;"><a class="navbar-brand" href="{% url 'cart:cartdetails' %}"><i class="fa fa-shopping-cart"></i>({{ count }})</a></div>
+        {% endif %}
+        <div style="display: inline-block; position: absolute; right: 20px;   ">
+            <form class="d-flex "  role="search"  action="{% url 'search:searchapp' %}">
+                {% csrf_token %}
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+            
+    </div>
+</nav>
+ -->
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'shop:allprodcat' %}">HOME</a>&nbsp;
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="navbar-brand dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">SHOP</a>
+            <ul class="dropdown-menu">
+            {% for cat in links %}
+              <li><a class="dropdown-item" href="{{ cat.get_url }}">{{ cat.name }}</a></li>
+            {% endfor %}
+            </ul>
+          </li>
+          {% if count > 0 %}
+          <li class="nav-item">
+            <a class="navbar-brand" href="{% url 'cart:cartdetails' %}"><i class="fa fa-shopping-cart"></i>(<span style="color: blue;">{{ count }}</span>)</a>
+          </li>
+          {% endif %}
+        </ul>
+        <form class="d-flex" role="search" action="{% url 'search:searchapp' %}">
+          {% csrf_token %}
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+          <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
