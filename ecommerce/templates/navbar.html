@@ -39,11 +39,11 @@
             {% endfor %}
             </ul>
           </li>
-          {% if count > 0 %}
+          
           <li class="nav-item">
-            <a class="navbar-brand" href="{% url 'cart:cartdetails' %}"><i class="fa fa-shopping-cart"></i>(<span style="color: blue;">{{ count }}</span>)</a>
+            <a class="navbar-brand" href="{% url 'cart:cartdetails' %}"><i class="fa fa-shopping-cart"></i>{% if count > 0 %}(<span style="color: blue;">{{ count }}</span>){% endif %}</a>
           </li>
-          {% endif %}
+          
         </ul>
         <form class="d-flex" role="search" action="{% url 'search:searchapp' %}">
           {% csrf_token %}
@@ -53,3 +53,5 @@
       </div>
     </div>
   </nav>
+
+ 

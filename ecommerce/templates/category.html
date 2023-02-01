@@ -10,7 +10,14 @@
 {% endif %}
 {% endblock %}
 
-
+<!-- Block Title -->
+{% block title %}
+{% if category %}
+    {{ category.name }}-SMART KART
+{% else %}
+    See our New Collections.-SMART KART
+{% endif %}
+{% endblock %}
 
 <!-- Block Body -->
 {% block content %}

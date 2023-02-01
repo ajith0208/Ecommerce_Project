@@ -12,7 +12,9 @@
 }
 
 .my_footer{
-    margin-top: 50px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     text-align: center;
 }
 
@@ -20,6 +22,3 @@
     height: 25rem;
 }
 
-.font_color{
-    color: azure;
-}
